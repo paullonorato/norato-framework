@@ -1,0 +1,65 @@
+
+@import "_variables";
+
+/**********************************************************************/
+
+.table{
+    tr{
+        &:nth-child(even) td{
+            background: #e5e5e5;
+        }
+
+        &:last-child td{
+            &:first-child{
+                @include radius( 0 0 0 $border-radius );
+            }
+
+            &:last-child{
+                @include radius( 0 0 $border-radius 0 );
+            }
+        }
+    }
+
+    th{
+        padding: $padding-top-bottom + ( $padding-top-bottom / 2 ) + px $padding-left-right + px;
+        background: $color-1;
+
+        font-size: 16px;
+        color: #fff;
+
+        &:first-child{
+            @include radius( $border-radius 0 0 0 );
+        }
+
+        &:last-child{
+            @include radius( 0 $border-radius 0 0 );
+        }
+    }
+
+    td{
+        padding: $padding-top-bottom + px $padding-left-right + px;
+        font-size: convert-px-em($base-size);
+    }
+
+    /***/
+
+    &-border{
+        /*border: 1px solid lighten( $color-default , 25% );*/
+
+        tr{
+            &:nth-child(2) td{
+                border-top: none;
+            }
+        }
+
+        td{
+            @extend td;
+            border-bottom: 1px solid $color-1;
+            border-right: 1px solid $color-1;
+
+            &:first-child{
+                border-left: 1px solid $color-1;
+            }
+        }
+    }
+}

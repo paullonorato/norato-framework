@@ -1,0 +1,26 @@
+
+*{
+	// padding: 0 !important;
+
+	font-family: arial !important;
+	color: #000 !important;
+}
+
+.no-print, aside, footer{
+	display: none !important;
+}
+
+/**********/
+
+header{
+	margin-bottom: 30px;
+}
+
+.editor{
+	font-size: 18px !important;
+	line-height: 28px !important;
+
+	img{
+		display: none;
+	}
+}

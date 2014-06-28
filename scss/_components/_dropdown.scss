@@ -1,0 +1,104 @@
+
+@import "_variables";
+
+/**********************************************************************/
+
+.dropdown, .dropdown-menu{
+	display: none;
+	@include radius();
+	background: #fff;
+	box-shadow: 0 4px 5px rgba( #000 , .15 );
+	position: absolute;
+	z-index: 10;
+
+	&:before{
+		height: 0;
+		width: 0;
+		border: solid transparent;
+		border-width: 7px;
+		border-color: rgba(255, 255, 255, 0);
+		border-bottom-color: #fff;
+		position: absolute;
+		bottom: 100%;
+		z-index: -1;
+
+		content: " ";
+	}
+
+	&-item{
+		display: block;
+	}
+
+	&.active{
+		display: block;
+	}
+}
+
+.dropdown, .dropdown-menu{
+	&-link{
+		display: block;
+
+		font-size: 12px;
+		color: $color-default;
+
+		&:hover{
+			background: rgba( 67 , 110 , 209 , .1 );
+			color: $color-1;
+		}
+	}
+
+	&-label{
+		font-size: 14px;
+		color: $color-default;
+	}
+}
+
+.dropdown{
+	&-item{
+		border-top: 1px solid $color-2;
+
+		&:first-child{
+			border-top: none;
+		}
+	}
+
+	&-link{
+		padding: 15px 22.2px;
+	}
+
+	/***/
+
+	&-left{
+		&:before{
+			left: 7%;
+		}
+	}
+
+	&-center{
+		&:before{
+			left: 47%;
+		}
+	}
+
+	&-right{
+		&:before{
+			right: 7%;
+		}
+	}
+
+	/***/
+
+	&-separator{
+		margin: 5px 0;
+		height: 1px;
+		background: #ddd;
+	}
+}
+
+.dropdown-menu{
+	padding: 5px 0;
+
+	&-link{
+		padding: 10px 20px;
+	}
+}

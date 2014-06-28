@@ -1,0 +1,76 @@
+﻿
+@import "_variables";
+
+/**********************************************************************/
+
+@mixin _default( $type ){
+    background: lighten( $type , 5% );
+    color: #fff;
+}
+
+@mixin _clear( $type ){
+    background: #fff;
+    border: 3px solid $type;
+    color: darken( $type , 15% );
+}
+
+@mixin _gradient( $type ){
+    background: -webkit-linear-gradient( top, lighten( $type , 15% ) , darken( $type , 5% ) );
+    background: linear-gradient( to bottom, lighten( $type , 15% ) , darken( $type , 5% ) );
+    border: 1px solid darken( $type , 5% );
+    color: #fff;
+}
+
+/**********************************************************************/
+
+.notification {
+    margin-bottom: 20px;
+    padding: 15px 20px;
+    display:block;
+    overflow:hidden;
+    @include radius();
+
+    font-size: $base-size;
+
+    /**********/
+
+    &-success {
+        @include _default( $color-confirm );
+    }
+
+    &-alert {
+        @include _default( $color-options );
+    }
+
+    &-error {
+        @include _default( $color-cancel );
+    }
+
+    /***/
+
+    &-success-clean {
+        @include _clear( $color-confirm );
+    }
+
+    &-alert-clean {
+        @include _clear( $color-options );
+    }
+
+    &-error-clean {
+        @include _clear( $color-cancel );
+    }
+
+    /***/
+
+    &-success-gradient {
+        @include _gradient( $color-confirm );
+    }
+
+    &-alert-gradient {
+        @include _gradient( $color-options );
+    }
+
+    &-error-gradient {
+        @include _gradient( $color-cancel );
+    }
+}

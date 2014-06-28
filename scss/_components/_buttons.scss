@@ -1,0 +1,186 @@
+
+@import "_variables";
+
+/**********************************************************************/
+
+@mixin _default( $type ){
+    background: $type;
+    color: #fff;
+
+    &:hover, &:focus{
+        background: lighten( $type , 5% );
+    }
+
+    &:active{
+        margin-top: 1px;
+        margin-bottom: 0;  
+        background: darken( $type , 10% );
+        color: darken( $type , 20% );
+    }
+}
+
+@mixin _clean( $type ){
+    border: 3px solid $type;
+    background: #fff;
+    color: darken( $type , 5% );
+
+    &:hover, &:focus{
+        border-color: darken( $type , 5% );
+        background: lighten( $type , 45% );
+        color: darken( $type , 10% );
+    }
+
+    &:active{
+        margin-top: 1px;
+        margin-bottom: 0;  
+        background: lighten( $type , 25% );
+        
+        color: darken( $type , 20% );
+    }
+}
+
+@mixin _gradient( $type ){
+    border: 1px solid darken( $type , 5% );
+    @include gradient( lighten( $type , 15% ) , darken( $type , 5% ) );
+    color: #fff;
+
+    &:hover, &:focus{
+        border-color: lighten( $type , 2% );
+        @include gradient( lighten( $type , 25% ) , darken( $type , 0% ) );
+    }
+
+    &:active{
+        margin-top: 1px;
+        margin-bottom: 0;  
+        background: darken( $type , 10% );
+        color: darken( $type , 20% );
+    }
+}
+
+/**********************************************************************/
+
+.btn{
+    margin-bottom: 1px;
+    padding: convert-px-em(5) convert-px-em(15);
+    display: inline-block;
+    @include radius();
+    border: none;
+    background: $color-default;
+    cursor: pointer;
+
+    color: #fff;
+    letter-spacing: 1px;
+    // text-transform: uppercase;
+    text-align: center;
+
+    -webkit-transition: none;
+       -moz-transition: none;
+        -ms-transition: none;
+         -o-transition: none;
+            transition: none;
+
+    &:hover, &:focus{
+        background: lighten( $color-default , 5% );
+    }
+
+    &:active{
+        margin-top: 1px;
+        margin-bottom: 0;  
+        background: darken( $color-default , 10% );
+        color: darken( $color-default , 20% );
+    }
+
+    &-mini{
+        font-size: convert-px-em(10);
+    }
+
+    &-small{
+        font-size: convert-px-em(14);
+    }
+
+    &-middle{
+        font-size: convert-px-em(18);
+    }
+
+    &-big{
+        font-size: convert-px-em(22);
+        font-weight: bold;
+    }
+
+    &-no-border{
+        border: none !important;
+    }
+
+    /**********/
+
+    &-default{
+        @include _default( $color-default );
+    }
+
+    &-confirm{
+        @include _default( $color-confirm );
+    }
+
+    &-options{
+        @include _default( $color-options );
+    }
+
+    &-cancel{
+        @include _default( $color-cancel );
+    }
+
+    /**********/
+
+    &-default-clean{
+        @include _clean( $color-default );
+    }
+
+    &-confirm-clean{
+        @include _clean( $color-confirm );
+    }
+
+    &-options-clean{
+       @include _clean( $color-options );
+    }
+
+    &-cancel-clean{
+        @include _clean( $color-cancel );
+    }
+
+    /**********/
+
+    &-default-gradient{
+        @include _gradient( $color-default );
+    }
+
+    &-confirm-gradient{
+        @include _gradient( $color-confirm );
+    }
+
+    &-options-gradient{
+        @include _gradient( $color-options );
+    }
+
+    &-cancel-gradient{
+        @include _gradient( $color-cancel );
+    }
+
+    /**********/
+
+    &-link{
+        background: none;
+        color: $color-options;
+
+        &:hover, &:focus{
+            background: none;
+            text-decoration: underline;
+        }
+
+        &:active{
+            margin-top: 1px;
+            margin-bottom: 0;  
+            background: none;
+            color: darken( $color-options , 20% );
+        }
+    }
+}

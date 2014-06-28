@@ -1,0 +1,17 @@
+@font-face {
+	font-family: 'Gotham Light';
+	src: url('../fonts/Gotham-Light.eot'); /* IE9 Compat Modes */
+	src: url('../fonts/Gotham-Light.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+	url('../fonts/Gotham-Light.woff') format('woff'), /* Modern Browsers */
+	url('../fonts/Gotham-Light.ttf')  format('truetype'), /* Safari, Android, iOS */
+	url('../fonts/Gotham-Light.svg#svgFontName') format('svg'); /* Legacy iOS */
+}
+
+@font-face {
+	font-family: 'Gotham Bold';
+	src: url('../fonts/Gotham-Bold.eot'); /* IE9 Compat Modes */
+	src: url('../fonts/Gotham-Bold.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+	url('../fonts/Gotham-Bold.woff') format('woff'), /* Modern Browsers */
+	url('../fonts/Gotham-Bold.ttf')  format('truetype'), /* Safari, Android, iOS */
+	url('../fonts/Gotham-Bold.svg#svgFontName') format('svg'); /* Legacy iOS */
+}
