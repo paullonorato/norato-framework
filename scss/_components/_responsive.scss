@@ -1,0 +1,45 @@
+
+@import "_variables";
+
+/**********************************************************************/
+
+//Smartphone default
+@media screen and (max-width: 767px){
+	html{
+		font-size: 85%;
+	}
+}
+
+//Smartphone in portrait
+@media screen and (max-width: 767px) and (orientation: portrait){
+}
+
+//Smartphone in landscape
+@media screen and (max-width: 767px) and (orientation: landscape){
+}
+
+
+
+//Tablet default
+@media screen and (min-width: 768px) and (max-width: 1023px){
+	html{
+		font-size: 90%;
+	}
+}
+
+//Tablet in portrait
+@media screen and (min-width: 768px) and (max-width: 1023px) and (orientation: portrait){
+}
+
+//Tablet in landscape
+@media screen and (min-width: 768px) and (max-width: 1023px) and (orientation: landscape){
+}
+
+
+
+//Desktop
+@media screen and (min-width: 1024px){
+	html{
+		font-size: 100%;
+	}
+}

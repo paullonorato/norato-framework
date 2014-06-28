@@ -1,0 +1,48 @@
+
+@import "_variables";
+@import "_form";
+@import "_required";
+
+/**********************************************************************/
+
+.form{
+    // margin-bottom: 30px;
+
+    .line{
+        margin-top: $grid-gutter + px;
+
+        &:first-child{
+            margin-top: 0;
+        }
+    }
+
+    p{
+        font-size: convert-px-em($base-size);
+        color: $color-default;
+        font-weight: bold;
+        /*text-transform: uppercase;*/
+    }
+
+    input, select, textarea{
+        padding: $padding-top-bottom + px $padding-left-right + px;
+        @include radius( $border-radius );
+        border: $input-border-width + px solid lighten($color-default , 40%);
+        border-bottom-color: lighten($color-default , 30%);
+        background: #fcfcfc;
+
+        font-size: convert-px-em($base-size);
+        color: lighten( $color-default , 20% );
+    }
+
+    .radio, .radio-inline{
+        label{
+            font-size: 13px;
+            color: darken( $color-1 , 20% );
+
+            &:hover{
+                border-color: lighten($color-2 , 20%);
+                color: $color-options;
+            }
+        }
+    }
+}

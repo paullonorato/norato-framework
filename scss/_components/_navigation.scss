@@ -1,0 +1,83 @@
+﻿
+@import "_variables";
+
+/**********************************************************************/
+
+.navigation {
+    padding: 15px;
+    text-align: center;
+
+    &-item, &-link{
+        font-size: 13px;
+    }
+
+    &-item{
+        margin-left: -4px;
+        display: inline-block;
+        box-shadow: 0 2px 5px #ddd;
+
+        &:hover, &:focus{
+            box-shadow: 0 2px 5px #fff;
+
+            .navigation-link{
+                background: #f3f3f3;
+                box-shadow: inset 0 2px 1px #ccc, inset 0 -10px 15px #fff;
+
+                color: lighten( $color-1 , 10% );
+            }
+        }
+
+        &:active, &.active{
+            .navigation-link{
+                background: #eee;
+                box-shadow: inset 0 3px 2px #999, inset 0 -10px 15px #ccc;
+
+                color: #aaa;
+            }
+        }
+
+        &.disabled{
+            box-shadow: 0 2px 5px #ddd !important;
+
+            .navigation-link{
+                background: #f3f3f3 !important;
+                box-shadow: none !important;
+                cursor: not-allowed;
+
+                color: #999 !important;
+            }
+
+            &:hover, &:focus, &:active{
+                @extend .disabled;
+            }
+        }
+    }
+
+    &-link{
+        padding: 12px 15px;
+        display: block;
+        border-top: 1px solid lighten( #555 , 48% );
+        border-left: 1px solid lighten( #555 , 45% );
+        border-bottom: 1px solid lighten( #555 , 40% );
+        box-shadow: inset 0 -10px 5px #eee;
+        position: relative;
+
+        color: $color-1;
+        font-size: 16px;
+    }
+
+    &-first-item, &-last-item{
+        .navigation-link{
+            font-weight: normal;
+        }
+    }
+
+    &-first-item &-link{
+        @include radius(3px 0 0 3px);
+    }
+
+    &-last-item &-link{
+        @include radius(0 3px 3px 0);
+        border-right: 1px solid lighten( #555 , 45% );
+    }
+}

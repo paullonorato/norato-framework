@@ -1,0 +1,46 @@
+﻿
+@import "_variables";
+
+/**********************************************************************/
+
+.breadcrumb {
+    /*margin-bottom: 20px;*/
+    padding: 15px;
+    @include radius();
+    background: #f5f5f5;
+
+    &-item, &-link{
+        font-size: 13px;
+    }
+
+    &-item{
+        display: inline-block;
+        cursor: default;
+
+        color: #999;
+
+        &:before{
+            margin: 0 10px;
+            content: "/";
+        }
+
+        &:first-child:before{
+            margin: 0;
+            content: "";
+        }
+    }
+
+    &-link{
+        color: $color-options;
+
+        &:hover, &:focus{
+            color: lighten( $color-options , 10% );
+            border-bottom: 1px dotted #999;
+        }
+    }
+
+    &-label{
+        color: $color-1;
+        font-weight: bold;
+    }
+}

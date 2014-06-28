@@ -1,0 +1,81 @@
+
+@import "_variables";
+
+/**********************************************************************/
+
+@mixin _default( $type ){
+    .panel-title{
+        background: $type;
+        border-bottom-color: $type;
+    }
+}
+
+@mixin _gradient( $type ){
+    border-color: $type;
+
+    .panel-title{
+        @include gradient( lighten( $type , 15% ) , darken( $type , 5% ) );
+        border-bottom-color: $type;
+
+        color: #fff;
+    }
+}
+
+/**********************************************************************/
+
+.panel{
+    margin: 0 3px;
+    @include radius();
+    box-shadow: 0 2px 2px #ccc;
+
+    &-title{
+        padding: $grid-gutter / 2 +px;
+        @include radius( 3px 3px 0 0 );
+        /*background: $color-default;*/
+        
+        color: #fff;
+        font-weight: bold;
+    }
+
+    &-content{
+        padding: $grid-gutter + px;
+        @include radius( 0 0 3px 3px );
+        background: #fff;
+    }
+
+    /**********/
+
+    &-default{
+        @include _default( $color-default );
+    }
+
+    &-confirm{
+        @include _default( $color-confirm );
+    }
+
+    &-options{
+        @include _default( $color-options );
+    }
+
+    &-cancel{
+        @include _default( $color-cancel );
+    }
+
+    /**********/
+
+    &-default-gradient{
+        @include _gradient( $color-default );
+    }
+
+    &-confirm-gradient{
+        @include _gradient( $color-confirm );
+    }
+
+    &-options-gradient{
+        @include _gradient( $color-options );
+    }
+
+    &-cancel-gradient{
+        @include _gradient( $color-cancel );
+    }
+}
