@@ -1,0 +1,992 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0">
+	<title>Components Central - KBR Tec</title>
+
+	<link rel="stylesheet" href="http://paullonorato.com.br/files/norato-framework/css/style.css">
+	<link href='http://fonts.googleapis.com/css?family=Raleway:300' rel='stylesheet' type='text/css'>
+</head>
+<body>
+	<menu class="menu">
+		<a href="#reset">Reset</a>
+		<a href="#typography">Typography</a>
+		<a href="#grid">Grid</a>
+		<a href="#breadcrumb">Breadcrumb</a>
+		<a href="#navigation">Navigation</a>
+		<a href="#table">Table</a>
+		<a href="#form">Form</a>
+		<a href="#required">Required</a>
+		<a href="#buttons">Buttons</a>
+		<a href="#notification">Notification</a>
+		<a href="#panels">Panels</a>
+		<a href="#dropdown" class="through">Dropdown</a>
+		<a href="#editor">Editor</a>
+	</menu>
+
+	<header>
+		<div class="wrapper">
+			<h1>Components Central <span>KBR Tec</span></h1>
+			<hr>
+			<h3><small>powered by Norato Framework</small></h3>
+		</div>
+	</header>
+
+	<!-- Reset -->
+	<section id="reset">
+		<div class="wrapper">
+			<article>
+				<h2 class="title">Reset</h2>
+
+				<h4 class="sub-subtitle">Instalation</h4>
+				<code>
+					_components/_reset.scss
+				</code>
+			</article>
+		</div>
+	</section>
+
+	<!-- Typography -->
+	<section id="typography">
+		<div class="wrapper">
+			<article>
+				<h2 class="title">Typography</h2>
+
+				<h4 class="sub-subtitle">Instalation</h4>
+				<code>
+					_components/_typography.scss
+				</code>
+
+				<h4 class="sub-subtitle">Usage</h4>
+				<p>Only used to link external sources. You set the default font and size in the variable file.</p>
+			</article>
+		</div>
+	</section>
+
+	<!-- Grid -->
+	<section id="grid">
+		<div class="wrapper">
+			<article>
+				<h2 class="title">Grid</h2>
+
+				<h4 class="sub-subtitle">Instalation</h4>
+				<code>
+					_components/_grid.scss
+				</code>
+
+				<h4 class="sub-subtitle">Usage</h4>
+				<p>
+					To use you must define three variables: <code class="inline">$responsive</code>, <code class="inline">$wrapper</code>, <code class="inline">$grid-columns</code> and <code class="inline">$grid-gutter</code>.
+					<br>
+					After it, on the HTML you must declare a <em>father element</em> (<code class="inline">.wrapper</code>) and add the <em>children element</em> (<code class="inline">.grid</code>).
+					You must declare the width for each <em>children element</em> with the class <code class="inline">.grid-x</code>.
+					<br>
+					Also you can define the last <em>children</em> using the class <code class="inline">.grid-last</code>, case this isn't the last.
+				</p>
+
+				<script src="https://gist.github.com/paullonorato/7334286.js"></script>
+			</article>
+
+			<div class="example">
+				<div class="container">
+					<div class="grid grid-2">grid-2</div>
+					<div class="grid grid-8">grid-8</div>
+					<div class="grid grid-2 grid-last">grid-2 grid-last</div>
+					<div class="grid grid-9">grid-9</div>
+					<div class="grid grid-3">grid-3</div>
+				</div>
+				<div class="container">
+					<div class="grid grid-8">grid-8</div>
+					<div class="grid grid-4">grid-4</div>
+				</div>
+			</div>
+
+			<article>
+				<p>Also you can align the elements to right (<code class="inline">.right</code>), as well as add spaces with the class <code class="inline">.grid-offset-x</code>.</p>
+
+				<script src="https://gist.github.com/paullonorato/7334333.js"></script>
+				
+				<div class="example">
+					<div class="container">
+						<div class="grid grid-4">grid-4</div>
+						<div class="grid grid-4 right">right</div>
+					</div>
+					<div class="container">
+						<div class="grid grid-4 grid-offset-3">grid-offset-3</div>
+						<div class="grid grid-2 grid-offset-2">grid-offset-2</div>
+					</div>
+				</div>
+			</article>
+
+			<article>
+				<div class="container">
+					<div class="grid grid-1"></div>
+					<div class="grid grid-1"></div>
+					<div class="grid grid-1"></div>
+					<div class="grid grid-1"></div>
+					<div class="grid grid-1"></div>
+					<div class="grid grid-1"></div>
+					<div class="grid grid-1"></div>
+					<div class="grid grid-1"></div>
+					<div class="grid grid-1"></div>
+					<div class="grid grid-1"></div>
+					<div class="grid grid-1"></div>
+					<div class="grid grid-1 grid-last"></div>
+
+					<div class="grid grid-1"></div>
+					<div class="grid grid-11 grid-last"></div>
+
+					<div class="grid grid-2"></div>
+					<div class="grid grid-10 grid-last"></div>
+
+					<div class="grid grid-3"></div>
+					<div class="grid grid-9 grid-last"></div>
+
+					<div class="grid grid-4"></div>
+					<div class="grid grid-8 grid-last"></div>
+
+					<div class="grid grid-5"></div>
+					<div class="grid grid-7 grid-last"></div>
+
+					<div class="grid grid-6"></div>
+					<div class="grid grid-6 grid-last"></div>
+
+					<div class="grid grid-7"></div>
+					<div class="grid grid-5 grid-last"></div>
+
+					<div class="grid grid-8"></div>
+					<div class="grid grid-4 grid-last"></div>
+
+					<div class="grid grid-9"></div>
+					<div class="grid grid-3 grid-last"></div>
+
+					<div class="grid grid-10"></div>
+					<div class="grid grid-2 grid-last"></div>
+
+					<div class="grid grid-11"></div>
+					<div class="grid grid-1 grid-last"></div>
+
+					<div class="grid grid-12"></div>
+				</div>
+			</article>
+		</div>
+	</section>
+
+	<!-- Breadcrumb -->
+	<section id="breadcrumb">
+		<div class="wrapper">
+			<article>
+				<h2 class="title">Breadcrumb</h2>
+				
+				<h4 class="sub-subtitle">Instalation</h4>
+				<code>
+					_components/_breadcrumb.scss
+				</code>
+
+				<h4 class="sub-subtitle">Usage</h4>
+				<script src="https://gist.github.com/paullonorato/7411949.js"></script>
+
+				<div class="example">
+					<ul class="no-bullet breadcrumb">
+						<li class="breadcrumb-item"><a href="#" class="breadcrumb-link">Home</a></li>
+						<li class="breadcrumb-item"><a href="#" class="breadcrumb-link">Categoria</a></li>
+						<li class="breadcrumb-item"><span class="breadcrumb-label">Produto</span></li>
+					</ul>
+				</div>
+			</article>
+		</div>
+	</section>
+
+	<!-- Navigation -->
+	<section id="navigation">
+		<div class="wrapper">
+			<article>
+				<h2 class="title">Navigation</h2>
+				
+				<h4 class="sub-subtitle">Instalation</h4>
+				<code>
+					_components/_navigation.scss
+				</code>
+
+				<h4 class="sub-subtitle">Usage</h4>
+				<p>
+					You can define the element disabled with the class <code class="inline">.disabled</code> and the active with <code class="inline">.active</code>.
+				</p>
+				<script src="https://gist.github.com/paullonorato/9667940.js"></script>
+
+				<div class="example">
+					<ul class="no-bullet navigation">
+						<li class="navigation-item navigation-first-item disabled"><a rel="prev" class="navigation-link">«</a></li>
+						<li class="navigation-item"><a href="#navigation" class="navigation-link">1</a></li>
+						<li class="navigation-item active"><a href="#navigation" class="navigation-link">2</a></li>
+						<li class="navigation-item"><a href="#navigation" class="navigation-link">3</a></li>
+						<li class="navigation-item"><a href="#navigation" class="navigation-link">4</a></li>
+						<li class="navigation-item"><a href="#navigation" class="navigation-link">5</a></li>
+						<li class="navigation-item navigation-last-item"><a rel="next" href="#navigation" class="navigation-link">»</a></li>
+					</ul>
+				</div>
+			</article>
+		</div>
+	</section>
+
+	<!-- Table -->
+	<section id="table">
+		<div class="wrapper">
+			<article>
+				<h2 class="title">Table</h2>
+
+				<h4 class="sub-subtitle">Instalation</h4>
+				<code>
+					_components/_table.scss
+				</code>
+
+				<h4 class="sub-subtitle">Usage</h4>				
+				<script src="https://gist.github.com/paullonorato/9668381.js"></script>
+
+				<div class="example">
+					<table width="100%" cellpadding="0" cellspacing="0" border="0" class="table">
+						<tr>
+							<th>Title</th>
+							<th>Title</th>
+						</tr>
+						<tr>
+							<td>Lorem ipsum</td>
+							<td>Lorem ipsum</td>
+						</tr>
+						<tr>
+							<td>Lorem ipsum</td>
+							<td>Lorem ipsum</td>
+						</tr>
+						<tr>
+							<td>Lorem ipsum</td>
+							<td>Lorem ipsum</td>
+						</tr>
+					</table>
+				</div>
+
+				<h4 class="sub-subtitle">Right border</h4>				
+				<script src="https://gist.github.com/paullonorato/9668438.js"></script>
+
+				<div class="example">
+					<table width="100%" cellpadding="0" cellspacing="0" border="0" class="table table-border">
+						<tr>
+							<th>Title</th>
+							<th>Title</th>
+						</tr>
+						<tr>
+							<td>Lorem ipsum</td>
+							<td>Lorem ipsum</td>
+						</tr>
+						<tr>
+							<td>Lorem ipsum</td>
+							<td>Lorem ipsum</td>
+						</tr>
+						<tr>
+							<td>Lorem ipsum</td>
+							<td>Lorem ipsum</td>
+						</tr>
+					</table>
+				</div>
+			</article>
+		</div>
+	</section>
+
+	<!-- Formulário -->
+	<section id="form">
+		<div class="wrapper">
+			<article>
+				<h2 class="title">Form</h2>
+
+				<h4 class="sub-subtitle">Instalation</h4>
+
+				<p>
+					Use it only on contact page or pages with form.
+				</p>
+
+				<code>
+					_components/form-custom.scss
+				</code>
+
+				<h4 class="sub-subtitle">Usage</h4>
+				<p>
+					You must declare a father element (<code class="inline">.line</code>) and add the children element (<code class="inline">.box</code>).
+					Also, you must declare the width for each children element with the class <code class="inline">.wd-x</code>. 
+				</p>
+
+				<script src="https://gist.github.com/paullonorato/7334343.js"></script>
+
+				<div class="example">
+					<form class="form">
+						<div class="line">
+							<div class="box wd-3">
+								<p>Text</p>
+								<input type="text" class="" value="Label">
+							</div>
+							<div class="box wd-3">
+								<p>E-mail</p>
+								<input type="email" class="">
+							</div>
+						</div>
+						<div class="line">
+							<div class="box wd-6">
+								<p>Text</p>
+								<input type="text" class="">
+							</div>
+						</div>
+					</form>
+				</div>
+
+				<h4 class="sub-subtitle">Campos de entrada única</h4>
+
+				<div class="example">
+					<form class="form">
+						<div class="line">
+							<div class="box wd-3">
+								<p>Text</p>
+								<input type="text" class="">
+							</div>
+
+							<div class="box wd-3">
+								<p>Email</p>
+								<input type="email" class="">
+							</div>
+
+							<div class="box wd-3">
+								<p>Data</p>
+								<input type="data" class="">
+							</div>
+
+							<div class="box wd-3">
+								<p>Datetime</p>
+								<input type="datetime" class="">
+							</div>
+						</div>
+						<div class="line">						
+							<div class="box wd-3">
+								<p>Tel</p>
+								<input type="tel" class="">
+							</div>
+
+							<div class="box wd-3">
+								<p>Url</p>
+								<input type="url" class="">
+							</div>
+
+							<div class="box wd-3">
+								<p>Search</p>
+								<input type="search" class="">
+							</div>
+
+							<div class="box wd-3">
+								<p>File</p>
+								<input type="file" class="">
+							</div>
+						</div>
+
+						<div class="line">
+							<div class="box wd-12">
+								<p>Textarea</p>
+								<textarea name="" class=""></textarea>
+							</div>
+						</div>
+					</form>
+				</div>
+
+				<h4 class="sub-subtitle">Campos de entrada múltipla</h4>
+				
+				<div class="example">
+					<form class="form">
+						<div class="line">
+							<div class="box wd-4">
+								<p>Select</p>
+								<select class="">
+									<option value="">Opção 1</option>
+									<option value="">Opção 2</option>
+									<option value="">Opção 3</option>
+									<option value="">Opção 4</option>
+									<option value="">Opção 5</option>
+								</select>
+							</div>
+
+							<div class="box wd-4">
+								<p>Number</p>
+								<input type="number" class="">
+							</div>
+
+							<div class="box wd-4">
+								<p>Datetime-local</p>
+								<input type="datetime-local" class="">
+							</div>
+						</div>
+
+						<div class="line">
+							<div class="box wd-4">
+								<p>Week</p>
+								<input type="week" class="">
+							</div>
+
+							<div class="box wd-4">
+								<p>Month</p>
+								<input type="month" class="">
+							</div>
+
+							<div class="box wd-4">
+								<p>Time</p>
+								<input type="time" class="">
+							</div>
+						</div>
+
+						<div class="line">
+							<div class="box wd-8">
+								<p>Select multiple</p>
+								<select class="" multiple>
+									<option value="">Opção 1</option>
+									<option value="">Opção 2</option>
+									<option value="">Opção 3</option>
+									<option value="">Opção 4</option>
+									<option value="">Opção 5</option>
+								</select>
+							</div>
+						</div>
+					</form>
+				</div>
+
+				<h4 class="sub-subtitle">Campos de entrada especiais</h4>
+
+				<div class="example">
+					<form class="form">
+						<div class="line">
+							<div class="box wd-3">
+								<p>Color</p>
+								<input type="color" class="">
+							</div>
+
+							<div class="box wd-3">
+								<p>Range</p>
+								<input type="range" class="">
+							</div>
+						</div>
+					</form>
+				</div>
+
+				<h4 class="sub-subtitle">Radio / Checkbox</h4>
+
+				<script src="https://gist.github.com/paullonorato/7334384.js"></script>
+
+				<div class="example">
+					<form class="form">
+						<div class="line">
+							<p>Label radio</p>
+
+							<div class="radio">
+								<label>
+									<input type="radio">Radio 1
+								</label>
+							</div>
+							<div class="radio">
+								<label>
+									<input type="radio">Radio 2
+								</label>
+								<label>
+									<input type="radio">Radio 3
+								</label>
+								<label>
+									<input type="radio">Radio 4
+								</label>
+								<label>
+									<input type="radio">Radio 5
+								</label>
+							</div>
+						</div>
+
+						<div class="line">
+							<p>Label checkbox</p>
+
+							<div class="radio">
+								<label>
+									<input type="checkbox">Checkbox 1
+								</label>
+							</div>
+							<div class="radio">
+								<label>
+									<input type="checkbox">Checkbox 2
+								</label>
+								<label>
+									<input type="checkbox">Checkbox 3
+								</label>
+								<label>
+									<input type="checkbox">Checkbox 4
+								</label>
+								<label>
+									<input type="checkbox">Checkbox 5
+								</label>
+
+							</div>
+						</div>
+					</form>
+				</div>
+
+				<h4 class="sub-subtitle">Radio inline / Checkbox inline</h4>
+
+				<p>
+					O que difere o <code class="inline">.radio</code> do <code class="inline">.radio-inline</code> é que o segundo foi feito para se utilizar junto de inputs.
+					<br>
+					Assim como a classe <code class="inline">.radio</code>, também é utilizada a classe <code class="inline">.radio-inline</code> ao invés de <code class="inline">.box</code>.
+				</p>
+
+				<script src="https://gist.github.com/paullonorato/7334395.js"></script>
+
+				<div class="example">
+					<form class="form">
+						<div class="line">
+							<div class="box wd-2">
+								<p>Text</p>
+								<input type="text" class="">
+							</div>
+
+							<div class="radio-inline">
+								<label>
+									<input type="radio">Radio 1
+								</label>
+
+								<label>
+									<input type="radio">Radio 2
+								</label>
+
+								<label>
+									<input type="radio">Radio 3
+								</label>
+
+								<label>
+									<input type="radio">Radio 4
+								</label>
+							</div>
+						</div>
+
+						<div class="line">
+							<div class="box wd-2">
+								<p>Text</p>
+								<input type="text" class="">
+							</div>
+
+							<div class="radio-inline">
+								<label>
+									<input type="checkbox">Checkbox 1
+								</label>
+								<label>
+									<input type="checkbox">Checkbox 2
+								</label>
+								<label>
+									<input type="checkbox">Checkbox 3
+								</label>
+								<label>
+									<input type="checkbox">Checkbox 4
+								</label>
+							</div>
+						</div>
+					</form>
+				</div>
+			</article>
+		</div>
+	</section>
+
+	<!-- Required -->
+	<section id="required">
+		<div class="wrapper">
+			<article>
+				<h2 class="title">Required</h2>
+
+				<h4 class="sub-subtitle">Instalation</h4>
+				<code>
+					_components/required.scss
+				</code>
+
+				<h4 class="sub-subtitle">Usage</h4>
+
+				<p>
+					Para adicionar a funcionalidade de campo obrigatório, adcione a class <code class="inline">.required</code> junto da class <code class="inline">.box</code>.
+					<br>
+					E para marcar o campo que está errado, adicione a class <code class="inline">.error</code> direto no input.
+					<br><br>
+					Para manipular a mensagem de erro <small><em>(O campo XYZ é obrigatório!)</em></small>, insira um div dentro do <code class="inline">.form</code> com a class <code class="inline">.return-error-message</code>.
+					<br>
+					Você terá de manipular a posição do elemento via javascript.
+				</p>
+
+				<script src="https://gist.github.com/paullonorato/7334420.js"></script>
+
+				<div class="example">
+					<form class="form" style="padding-bottom: 20px;">
+						<div class="line">
+							<div class="box wd-4 required">
+								<p>Campo obrigatório</p>
+								<input type="text" class="">
+							</div>
+
+							<div class="box wd-4 required">
+								<p>Campo obrigatório com erro</p>
+								<input type="text" class=" error" value="error">
+							</div>
+						</div>
+
+						<div class="required-message" style="left: 355px; top: 70px">O campo XYZ é obrigatório!</div>
+					</form>
+				</div>
+			</article>
+		</div>
+	</section>
+
+	<!-- Buttons -->
+	<section id="buttons">
+		<div class="wrapper">
+			<article>
+				<h2 class="title">Buttons</h2>
+
+				<h4 class="sub-subtitle">Instalation</h4>
+				<code>
+					_components/_buttons.scss
+				</code>
+
+				<h4 class="sub-subtitle">Usage</h4>
+				<script src="https://gist.github.com/paullonorato/4c45142eee7eee6bfcf6.js"></script>
+
+				<h4 class="sub-subtitle">Sizes</h4>				
+				<script src="https://gist.github.com/paullonorato/7334446.js"></script>
+
+				<div class="example">
+					<form class="form">
+						<div class="line">
+							<button class="btn btn-mini">Button</button>
+							<button class="btn btn-small">Button</button>
+							<button class="btn btn-middle">Button</button>
+							<button class="btn btn-big">Button</button>
+						</div>
+					</form>
+				</div>
+
+				<h4 class="sub-subtitle">Default colors</h4>
+				<script src="https://gist.github.com/paullonorato/c73d5e22151aa6a75486.js"></script>
+
+				<div class="example">
+					<form class="form">
+						<div class="line">
+							<button class="btn btn-middle btn-default">Default</button>
+							<button class="btn btn-middle btn-confirm">Confirm</button>
+							<button class="btn btn-middle btn-options">Options</button>
+							<button class="btn btn-middle btn-cancel">Cancel</button>
+						</div>
+					</form>
+				</div>
+
+				<h4 class="sub-subtitle">Clean colors</h4>
+				<script src="https://gist.github.com/paullonorato/7334487.js"></script>
+
+				<div class="example">
+					<form class="form">
+						<div class="line">
+							<button class="btn btn-middle btn-default-clean">Default</button>
+							<button class="btn btn-middle btn-confirm-clean">Confirm</button>
+							<button class="btn btn-middle btn-options-clean">Options</button>
+							<button class="btn btn-middle btn-cancel-clean">Cancel</button>
+						</div>
+					</form>
+				</div>
+
+				<h4 class="sub-subtitle">Gradient colors</h4>
+				<script src="https://gist.github.com/paullonorato/7334496.js"></script>
+
+				<div class="example">
+					<form class="form">
+						<div class="line">
+							<button class="btn btn-middle btn-default-gradient">Default</button>
+							<button class="btn btn-middle btn-confirm-gradient">Confirm</button>
+							<button class="btn btn-middle btn-options-gradient">Options</button>
+							<button class="btn btn-middle btn-cancel-gradient">Cancel</button>
+						</div>
+					</form>
+				</div>
+
+				<h4 class="sub-subtitle">Button link</h4>
+				<script src="https://gist.github.com/paullonorato/7334514.js"></script>
+
+				<div class="example">
+					<form class="form">
+						<div class="line">
+							<button class="btn btn-mini btn-link">Link</button>
+							<button class="btn btn-small btn-link">Link</button>
+							<button class="btn btn-middle btn-link">Link</button>
+							<button class="btn btn-big btn-link">Link</button>
+						</div>
+					</form>
+				</div>
+
+				<h4 class="sub-subtitle">One class, multiple tags</h4>
+				<script src="https://gist.github.com/paullonorato/7334525.js"></script>
+
+				<div class="example">
+					<form class="form">
+						<div class="line">
+							<a class="btn btn-middle btn-options" href="">Link</a>
+							<button class="btn btn-middle btn-options" type="submit">Button</button>
+						</div>
+					</form>
+				</div>
+			</article>
+		</div>
+	</section>
+
+	<!-- Notification -->
+	<section id="notification">
+		<div class="wrapper">
+			<article>
+				<h2 class="title">Notification</h2>
+
+				<h4 class="sub-subtitle">Instalation</h4>
+				<code>
+					_components/_notification.scss
+				</code>
+
+				<h4 class="sub-subtitle">Usage</h4>
+				<script src="https://gist.github.com/paullonorato/7334605.js"></script>
+
+				<h4 class="sub-subtitle">Default colors</h4>
+				<script src="https://gist.github.com/paullonorato/72fcc7b548847ff180e9.js"></script>
+
+				<div class="example">
+					<div class="notification notification-success">Mensagem de <strong>sucesso</strong></div>
+					<div class="notification notification-alert">Mensagem de <strong>alerta</strong></div>
+					<div class="notification notification-error">Mensagem de <strong>erro</strong></div>
+				</div>
+
+				<h4 class="sub-subtitle">Clean colors</h4>
+				<script src="https://gist.github.com/paullonorato/7334621.js"></script>
+
+				<div class="example">
+					<div class="notification notification-success-clean">Mensagem de <strong>sucesso</strong> clean</div>
+					<div class="notification notification-alert-clean">Mensagem de <strong>alerta</strong> clean</div>
+					<div class="notification notification-error-clean">Mensagem de <strong>erro</strong> clean</div>
+				</div>
+
+				<h4 class="sub-subtitle">Gradient colors</h4>
+				<script src="https://gist.github.com/paullonorato/7334632.js"></script>
+
+				<div class="example">
+					<div class="notification notification-success-gradient">Mensagem de <strong>sucesso</strong> gradient</div>
+					<div class="notification notification-alert-gradient">Mensagem de <strong>alerta</strong> gradient</div>
+					<div class="notification notification-error-gradient">Mensagem de <strong>erro</strong> gradient</div>
+				</div>
+			</article>
+		</div>
+	</section>
+
+	<!-- Panels -->
+	<section id="panels">
+		<div class="wrapper">
+			<article>
+				<h2 class="title">Panels</h2>
+
+				<h4 class="sub-subtitle">Instalation</h4>
+				<code>
+					_components/_panels.scss
+				</code>
+
+				<h4 class="sub-subtitle">Usage</h4>
+				
+				<script src="https://gist.github.com/paullonorato/7334551.js"></script>
+
+				<form class="form">
+					<div class="panel panel-default">
+						<div class="panel-title">
+							There are many variations of passages of Lorem Ipsum
+						</div>
+
+						<div class="panel-content">
+							Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type.
+							<br><br>
+							<form class="form">
+								<div class="line">
+									<div class="box wd-2">
+										<p>State</p>
+										<input type="text" class="">
+									</div>
+									<div class="box wd-4">
+										<p>Address</p>
+										<input type="text" class="">
+									</div>
+									<div class="box wd-3">
+										<p>Phone</p>
+										<input type="text" class="">
+									</div>
+									<div class="box wd-3">
+										<p>Mail</p>
+										<input type="text" class="">
+									</div>
+								</div>
+							</form>
+						</div>
+					</div>
+				</form>
+
+				<h4 class="sub-subtitle">Default colors</h4>
+
+				<script src="https://gist.github.com/paullonorato/7334566.js"></script>
+				<div class="example">
+					<form class="form">
+						<div class="panel panel-confirm">
+							<div class="panel-title">
+								Panel title
+							</div>
+
+							<div class="panel-content">
+								...
+							</div>
+						</div>
+						<br>
+
+						<div class="panel panel-options">
+							<div class="panel-title">
+								Panel title
+							</div>
+
+							<div class="panel-content">
+								...
+							</div>
+						</div>
+						<br>
+
+						<div class="panel panel-cancel">
+							<div class="panel-title">
+								Panel title
+							</div>
+
+							<div class="panel-content">
+								...
+							</div>
+						</div>
+					</form>
+				</div>
+
+				<h4 class="sub-subtitle">Gradient colors</h4>
+				<p></p>
+
+				<script src="https://gist.github.com/paullonorato/7334594.js"></script>
+
+				<div class="example">
+					<form class="form">
+						<div class="panel panel-default-gradient">
+							<div class="panel-title">
+								Panel title
+							</div>
+
+							<div class="panel-content">
+								...
+							</div>
+						</div>
+						<br>
+
+						<div class="panel panel-confirm-gradient">
+							<div class="panel-title">
+								Panel title
+							</div>
+
+							<div class="panel-content">
+								...
+							</div>
+						</div>
+						<br>
+
+						<div class="panel panel-options-gradient">
+							<div class="panel-title">
+								Panel title
+							</div>
+
+							<div class="panel-content">
+								...
+							</div>
+						</div>
+						<br>
+
+						<div class="panel panel-cancel-gradient">
+							<div class="panel-title">
+								Panel title
+							</div>
+
+							<div class="panel-content">
+								...
+							</div>
+						</div>
+					</form>
+				</div>
+			</article>
+		</div>
+	</section>
+
+	<!-- Editor -->
+	<section id="editor">
+		<div class="wrapper">
+			<article>
+				<h2 class="title">Editor</h2>
+
+				<h4 class="sub-subtitle">Instalation</h4>
+				<code>
+					_components/editor.scss
+				</code>
+
+				<h4 class="sub-subtitle">Usage</h4>
+				<script src="https://gist.github.com/paullonorato/7334653.js"></script>
+
+				<div class="example">
+					<div class="editor">
+						<h1>Lorem Ipsum is simply dummy text of the printing</h1>
+						<h2>Lorem Ipsum is simply dummy text of the printing</h2>
+						<h3>Lorem Ipsum is simply dummy text of the printing</h3>
+						<h4>Lorem Ipsum is simply dummy text of the printing</h4>
+						<h5>Lorem Ipsum is simply dummy text of the printing</h5>
+						<h6>Lorem Ipsum is simply dummy text of the printing</h6>
+
+						<img src="images/exemplo-editor.jpg" alt="" class="left">
+						<p>
+							Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown <a href="#">printer took a galley</a> of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into <sup>electronic</sup> typesetting, remaining essentially unchanged. It was popularised in the 1960s with <strong>the release of</strong> Letraset <sub>sheets</sub> containing Lorem Ipsum passages, and more recently with desktop <em>publishing software like Aldus PageMaker</em> including versions of Lorem Ipsum.
+							<br><br>
+							Mauris ac eros id tellus tristique porttitor sed auctor ipsum. Aliquam a nulla a tellus pretium consequat a ac libero. Suspendisse sed lorem vulputate, scelerisque quam quis, adipiscing risus. Nam ultrices in arcu at laoreet. Phasellus feugiat mattis lectus in rutrum. In vestibulum ipsum quam. Mauris eget urna eget lectus consectetur auctor ac nec dui. Phasellus enim metus, suscipit nec orci ut, varius pellentesque neque. Maecenas in adipiscing enim, ut ullamcorper ipsum
+						</p>
+
+						<img src="images/exemplo-editor.jpg" alt="" class="center">
+						<img src="images/exemplo-editor.jpg" alt="" class="right">
+
+						<br><br>
+
+						<ul>
+							<li>There are many variations;</li>
+							<li>Mauris ac eros id tellus tristique;</li>
+							<li>Class aptent taciti sociosqu ad litora;</li>
+						</ul>
+
+						<blockquote>
+							This is a <strong>blockquote</strong>! You can <strong>modify</strong> the style ;)
+						</blockquote>
+
+						<ol>
+							<li>Cras ornare arcu vel eros posuere;</li>
+							<li>Integer semper velit suscipit ante;</li>
+							<li>Vestibulum posuere dignissim augue;</li>
+						</ol>
+
+						<iframe width="640" height="360" src="//www.youtube.com/embed/q-6z8b9oxCM?rel=0" frameborder="0" allowfullscreen></iframe>
+					</div>
+				</div>
+			</article>
+		</div>
+	</section>
+
+	<footer>
+		<div class="wrapper">
+			<p>Use. Contribua. Aprimore.</p>
+			<small>Since 2013 - Components made with Sass - by Paullo Norato</small>
+		</div>
+	</footer>
+
+	<!-- ps.: criar componentes: button groups, Search form, Label and badge -->
+</body>
+</html>
