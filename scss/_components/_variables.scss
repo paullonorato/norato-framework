@@ -1,9 +1,9 @@
 
 /************************************************** GRID ***********************************/
 $responsive: 1; // 0 fixed ~ 1 responsive
-$wrapper: 1024;
+$wrapper: 950;
 $grid-columns: 12;
-$grid-gutter: 20;
+$grid-gutter: 10;
 
 /************************************************** FORM ***********************************/
 $padding-top-bottom: 10;
@@ -19,14 +19,14 @@ $color-options: #2c82c7;
 $color-cancel: #c72c2c;
 
 //Special colors 
-$color-1: #0277bd;
-$color-2: #42bd41;
-$color-3: #ff9800;
+$color-1: #2b2b2b;
+$color-2: #25a595;
+$color-3: #7c7c7c;
 
 /************************************************** TYPOGRAPHY *****************************/
-$base-font: 'Open Sans', sans-serif;
+$base-font: 'Maven Pro', sans-serif;
 $variant-font: '', sans-serif;
-$base-size: 14;
+$base-size: 16;
 $base-line-height: 1.4;
 
 

@@ -5,16 +5,12 @@
 .wrapper{
 	margin: auto;
 	width: 95%;
-	max-width: $wrapper + px;
-	overflow: hidden;
+	max-width: $wrapper + 0px;
+	// overflow: hidden;
 }
 
 .grid{
 	float: left;
-	
-	&:last-child, &-last{
-		margin-right: 0 !important;
-	}
 }
 
 .both{
@@ -36,6 +32,10 @@
 	float: right !important;
 }
 
+.visible{
+	overflow: visible;
+}
+
 /************************************************** CORE ********************/
 
 @if $responsive == 0 {
@@ -44,42 +44,37 @@
 	
 	.wrapper{
 		@extend .wrapper;
-		width: $wrapper + px;
+		width: $wrapper + 0px;
 	}
 
 	.grid{
-		margin-right: $grid-gutter + px;
+		margin-right: $grid-gutter + 0px;
 		@extend .grid;
 	}
 
 	@for $i from 1 through $grid-columns{
 		.grid-#{$i}{
-			width: ($grid-width * $i) + ($grid-gutter * ($i - 1)) + px;
+			width: ($grid-width * $i) + ($grid-gutter * ($i - 1)) + 0px;
 		}
 
 		.grid-offset-#{$i}{
-			margin-left: ($grid-width * $i) + ($grid-gutter * $i) + px;
+			margin-left: ($grid-width * $i) + ($grid-gutter * $i) + 0px;
 		}
 
 		.wd-#{$i}{
-			width: ($grid-width * $i) + ($grid-gutter * ($i - 1)) + px;
+			width: ($grid-width * $i) + ($grid-gutter * ($i - 1)) + 0px;
 		}
 	}
 
-	@media screen and (max-width: 1100px){
-		header, footer{
-			width: $wrapper + 10px !important;
-		}
-	}
 	}@else{
 		.wrapper{
 			@extend .wrapper;
 			width: 95%;
-			max-width: $wrapper + px;
+			max-width: $wrapper + 0px;
 		}
 
 	//Smartphone
-	@media screen and (max-width: 767px){
+	@media screen and (max-width: 540px){
 		@for $i from 1 through $grid-columns{
 			.grid-#{$i}, .wd-#{$i}{
 				width: 100%;
@@ -93,22 +88,29 @@
 	}
 
 	//Tablet
-	@media screen and (min-width: 768px) and (max-width: 1023px){
+	@media screen and (min-width: 541px) and (max-width: 1023px){
 		@for $i from 1 through $grid-columns{
 			$grid-width: ( ( $wrapper - ( ( $grid-columns - 1 ) * $grid-gutter ) ) / $grid-columns ) * $i !global;
 
 			.grid-#{$i}{
-				margin-right: percentage( ( $grid-gutter / $wrapper ));
-				width: percentage( ( $grid-width + ( ( $i - 1 ) * $grid-gutter ) ) / $wrapper );
+				width: 49%;
+
+				&:nth-child(odd){
+					margin-right: percentage( ( $grid-gutter / $wrapper ));
+				}
+			}
+
+			.wd-#{$i}{
+				width: 49%;
+
+				&:nth-child(odd){
+					margin-right: percentage( ( $grid-gutter / $wrapper ));
+				}
 			}
 
 			// Use it to add spaces in the elements
 			.grid-offset-#{$i}{
 				margin-left: percentage( ( $grid-width + $i * $grid-gutter ) / $wrapper );
-			}
-
-			.wd-#{$i}{
-				width: percentage( ( $grid-width + ( $i - 1 ) * $grid-gutter ) / $wrapper );
 			}
 		}
 
@@ -125,6 +127,12 @@
 
 	//Desktop
 	@media screen and (min-width: 1024px){
+		.grid{
+			&:last-child, &-last{
+				margin-right: 0 !important;
+			}
+		}
+
 		@for $i from 1 through $grid-columns{
 			$grid-width: ( ( $wrapper - ( ( $grid-columns - 1 ) * $grid-gutter ) ) / $grid-columns ) * $i !global;
 
@@ -133,18 +141,19 @@
 				width: percentage( ( $grid-width + ( ( $i - 1 ) * $grid-gutter ) ) / $wrapper );
 			}
 
-			.grid-offset-#{$i}{
-				margin-left: percentage( ( $grid-width + $i * $grid-gutter ) / $wrapper );
-			}
-
 			.wd-#{$i}{
 				width: percentage( ( $grid-width + ( $i - 1 ) * $grid-gutter ) / $wrapper );
+			}
+
+			// Use it to add spaces in the elements
+			.grid-offset-#{$i}{
+				margin-left: percentage( ( $grid-width + $i * $grid-gutter ) / $wrapper );
 			}
 		}
 	}
 }
 
-/************************************************** VIEW ********************/
+/************************************************** HELP VIEW ********************/
 // Add the code below on website's body to view the columns: #grids>#grids-container>.grid.grid-1* + [grid-columns + press Tab]
 
 #grids{
@@ -160,7 +169,7 @@
 		margin: auto;
 		width: 95%;
 		height: inherit;
-		max-width: $wrapper + px;
+		max-width: $wrapper + 0px;
 		background: yellow;
 	}
 

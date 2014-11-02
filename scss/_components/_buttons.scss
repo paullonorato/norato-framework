@@ -34,7 +34,7 @@
         margin-top: 1px;
         margin-bottom: 0;  
         background: lighten( $type , 25% );
-        
+
         color: darken( $type , 20% );
     }
 }
@@ -59,8 +59,11 @@
 
 /**********************************************************************/
 
+a.btn{
+    padding: convert-px-em(1.7) convert-px-em(15);
+}
+
 .btn{
-    margin-bottom: 1px;
     padding: convert-px-em(5) convert-px-em(15);
     display: inline-block;
     @include radius();
@@ -70,25 +73,25 @@
 
     color: #fff;
     letter-spacing: 1px;
-    // text-transform: uppercase;
+    /*text-transform: uppercase;*/
     text-align: center;
 
     -webkit-transition: none;
-       -moz-transition: none;
-        -ms-transition: none;
-         -o-transition: none;
-            transition: none;
+    -moz-transition: none;
+    -ms-transition: none;
+    -o-transition: none;
+    transition: none;
 
     &:hover, &:focus{
         background: lighten( $color-default , 5% );
     }
 
     &:active{
-        margin-top: 1px;
-        margin-bottom: 0;  
         background: darken( $color-default , 10% );
         color: darken( $color-default , 20% );
     }
+
+    /***/
 
     &-mini{
         font-size: convert-px-em(10);
@@ -107,7 +110,11 @@
         font-weight: bold;
     }
 
-    &-no-border{
+    &-inline{
+        padding: $padding-top-bottom + 3px $padding-left-right + 0px;
+    }
+
+    &-noborder{
         border: none !important;
     }
 
@@ -140,7 +147,7 @@
     }
 
     &-options-clean{
-       @include _clean( $color-options );
+        @include _clean( $color-options );
     }
 
     &-cancel-clean{
@@ -168,19 +175,30 @@
     /**********/
 
     &-link{
+        padding: 0;
         background: none;
         color: $color-options;
 
-        &:hover, &:focus{
+        &:hover{
             background: none;
-            text-decoration: underline;
+            border-bottom: 1px dotted $color-options;
+        }
+    }
+
+    /**********/
+
+    @if $responsive == 1 {
+        @media screen and (max-width: 540px){
+            &-inline{
+                margin: 5px 3px;
+            }
         }
 
-        &:active{
-            margin-top: 1px;
-            margin-bottom: 0;  
-            background: none;
-            color: darken( $color-options , 20% );
+        @media screen and (min-width: 541px){
+            &-inline{
+                margin-top: $base-size * 2 + 0px;
+            }
         }
     }
 }
+

@@ -30,7 +30,7 @@
     overflow:hidden;
     @include radius();
 
-    font-size: $base-size;
+    font-size: $base-size + 0px;
 
     /**********/
 
