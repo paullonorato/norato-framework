@@ -1,0 +1,26 @@
+{
+  "name": "norato-framework",
+  "version": "1.0.0",
+  "description": "Este Framework fora desenvolvido especialmente para facilitar a minha vida profissional. Talvez este não será uma grande novidade na tua vida, partindo do princípio que há outros mil diversos Frameworks semelhantes espalhados pelo mundo. O diferencial dele, ao meu ver, é a flexibilidade junto da produtividade, pois fora desenvolvido em SASS. Contém 13 componentes publicados e 2 em desenvolvimento.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/BrunoKinoshita/norato-framework.git"
+  },
+  "author": "paullonorato",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/BrunoKinoshita/norato-framework/issues"
+  },
+  "homepage": "https://github.com/BrunoKinoshita/norato-framework",
+  "devDependencies": {
+    "gulp": "^3.9.0",
+    "gulp-autoprefixer": "^2.3.1",
+    "gulp-plumber": "^1.0.1",
+    "gulp-sass": "^2.0.4",
+    "gulp-sourcemaps": "^1.5.2"
+  }
+}
