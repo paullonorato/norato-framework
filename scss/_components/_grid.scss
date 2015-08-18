@@ -19,9 +19,10 @@
 }
 
 .center{
-	margin: auto !important;
-	display: block !important;
-	float: none !important;
+	margin-right: auto !important;
+	margin-left: auto;
+	display: block;
+	float: none;
 }
 
 .left{
@@ -129,7 +130,7 @@
 	@media screen and (min-width: 1024px){
 		.grid{
 			&:last-child, &-last{
-				margin-right: 0 !important;
+				margin-right: 0;
 			}
 		}
 
@@ -176,6 +177,5 @@
 	.grid{
 		height: inherit;
 		background: red;
-		float: left;
 	}
 }
